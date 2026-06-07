@@ -11,9 +11,7 @@
     <style>
 
       :root {
-
           /* Paleta Corporativa y Elegante */
-
           --primary: #24827C;
             --primary-light: rgba(36, 130, 124, 0.1);
             --dark: #0F172A; 
@@ -22,9 +20,7 @@
             --gray-light: #F1F5F9;
             --white: #FFFFFF;
             --border: #E2E8F0;
-
           --glass-bg: rgba(255, 255, 255, 0.85);
-
       }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,9 +35,7 @@
             touch-action: pan-x pan-y pinch-zoom; 
         }
 
-
       /* --- FORZAR ZOOM EN MODO PANTALLA COMPLETA --- */
-
       :fullscreen { overflow: auto !important; touch-action: pan-x pan-y pinch-zoom !important; }
         :-webkit-full-screen { overflow: auto !important; touch-action: pan-x pan-y pinch-zoom !important; }
 
@@ -135,9 +129,7 @@
         .slide.active { opacity: 1; visibility: visible; transform: translateY(0) scale(1); z-index: 10; }
 
         /* --- PORTADA Y CIERRE --- */
-
       .slide-cover {
-
           padding: 0; justify-content: center; align-items: center;
             background-image: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.96)), url('https://res.cloudinary.com/dqt0d66h7/image/upload/v1765353947/caracas-5197107_1920_1_unpf6v.jpg');
             background-size: cover; background-position: center;
@@ -221,9 +213,7 @@
         .tl-content p { font-size: 1.25rem; color: var(--gray-dark); line-height: 1.6; font-weight: 300; text-align: justify; }
 
         /* ======================================================== */
-
       /* --- ESTILOS PARA LA LÁMINA LEGAL (MEDIA LUNA) --- */
-
       /* ======================================================== */
         .legal-wrapper {
             position: relative; width: 100%; height: calc(100% - 130px); margin-top: 10px;
@@ -275,7 +265,6 @@
     <div id="orientation-warning">
         <i class="fad fa-mobile-android"></i>
         <h2>Gire su dispositivo</h2>
-
       <p style="margin-top: 15px; font-size: 1.1rem; color: var(--gray-light);">Visualización optimizada en formato horizontal.</p>
     </div>
 
@@ -310,16 +299,13 @@
                 <h1 style="font-size: 5.5rem; font-weight: 900; color: var(--dark); line-height: 1.05; letter-spacing: -2px; margin-bottom: 25px;">
                     Modernización Digital<br>del <span class="highlight">Terminal La Bandera</span>
               </h1>
-
               <p style="font-size: 1.8rem; color: var(--gray-dark); font-weight: 400; text-align: center;">Un ecosistema autosustentable que dignifica al ciudadano y optimiza la gestión de las operadoras de Transporte.</p>
-
           </div>
         </div>
 
         <div class="slide">
             <h2 class="slide-title"><i class="fad fa-chart-network"></i> Hacia una Gestión Moderna y Transparente</h2>
             <p class="slide-subtitle">Una plataforma diseñada para optimizar procesos y generar valor social real.</p>
-
           <div class="grid-2">
                 <div>
                     <div class="card alert" style="margin-bottom: 30px;">
@@ -349,9 +335,7 @@
 
         <div class="slide">
             <h2 class="slide-title"><i class="fad fa-institution"></i> Efecto Estado: Gobernabilidad y Soberanía</h2>
-
           <p class="slide-subtitle">Una herramienta tecnológica para auditar, administrar y potenciar la gestión pública municipal en materia de Terminales.</p>
-
           <div class="grid-2" style="height: calc(100% - 150px); align-items: center;">
                 <div style="display: flex; flex-direction: column; gap: 25px; height: 100%; justify-content: center;">
                     <div class="card" style="padding: 30px;">
@@ -538,121 +522,192 @@
             <h2 class="slide-title"><i class="fad fa-file-invoice-dollar"></i> Transparencia Financiera Automatizada</h2>
             <p class="slide-subtitle">Distribución auditable e inmediata por cada boleto emitido.</p>
             
-            <div class="fin-wrapper">
-                <div class="fin-header">
-                    <div style="max-width: 65%;">
-                        <p class="text-body" style="margin:0;"><strong>Ejemplos basados en 1 boleto:</strong> El Sistema muestra en tiempo real las deducciones a favor del Terminal y del ecosistema “Mi Boleto Directo”, así como la liquidación a la operadora de transporte.</p>
-                    </div>
-                    <div class="bcv-tag">
-                        <i class="fad fa-university"></i> Tasa BCV: 477,14 Bs/USD
+            <div class="tabs-container">
+                <div class="tabs-nav">
+                    <button class="tab-btn active" onclick="openTab(event, 'tab-fin-ejemplar')"><i class="fad fa-ticket"></i> Ejemplos</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tab-fin-escenario1')"><i class="fad fa-chart-pie"></i> Escenario 1</button>
+                    <button class="tab-btn" onclick="openTab(event, 'tab-fin-escenario2')"><i class="fad fa-chart-line-up"></i> Escenario 2</button>
+                </div>
+
+                <div id="tab-fin-ejemplar" class="tab-content active">
+                    <div class="fin-wrapper">
+                        <div class="fin-header">
+                            <div style="max-width: 65%;">
+                                <p class="text-body" style="margin:0;"><strong>Ejemplos basados en 1 boleto:</strong> El Sistema muestra en tiempo real las deducciones a favor del Terminal y del ecosistema “Mi Boleto Directo”, así como la liquidación a la operadora de transporte.</p>
+                            </div>
+                            <div class="bcv-tag">
+                                <i class="fad fa-university"></i> Tasa BCV: 477,14 Bs/USD
+                            </div>
+                        </div>
+                        <div class="fin-grid">
+                            <div class="fin-col">
+                                <h4>S. Cristóbal / Mérida</h4>
+                                <div class="price-usd">$35</div>
+                                <div class="price-bs">16.700,20 Bs</div>
+                                <div class="fin-row">
+                                    <div class="fin-row-details">
+                                        <span class="fin-row-title">Terminal</span>
+                                        <span class="fin-row-sub">3% Listín + Tasa de Salida</span>
+                                    </div>
+                                    <div class="fin-row-amount">-$2.01</div>
+                                </div>
+                                <div class="fin-row">
+                                    <div class="fin-row-details">
+                                        <span class="fin-row-title">MiBoletoDirecto</span>
+                                        <span class="fin-row-sub">5.5% (Servicio)</span>
+                                    </div>
+                                    <div class="fin-row-amount">-$1.92</div>
+                                </div>
+                                <div class="fin-net">
+                                    <span style="font-size: 1.1rem; align-self: center; color: var(--dark);">Empresa de Transporte:</span>
+                                    <div style="text-align: right;">
+                                        <div style="line-height: 1;">$31.07</div>
+                                        <div style="font-size: 1.05rem; color: var(--gray); font-weight: 600; margin-top: 5px;">14.824,74 Bs</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fin-col">
+                                <h4>Maracaibo</h4>
+                                <div class="price-usd">$28</div>
+                                <div class="price-bs">13.360,17 Bs</div>
+                                <div class="fin-row">
+                                    <div class="fin-row-details">
+                                        <span class="fin-row-title">Terminal</span>
+                                        <span class="fin-row-sub">3% Listín + Tasa de Salida</span>
+                                    </div>
+                                    <div class="fin-row-amount">-$1.80</div>
+                                </div>
+                                <div class="fin-row">
+                                    <div class="fin-row-details">
+                                        <span class="fin-row-title">MiBoletoDirecto</span>
+                                        <span class="fin-row-sub">5.5% (Servicio)</span>
+                                    </div>
+                                    <div class="fin-row-amount">-$1.54</div>
+                                </div>
+                                <div class="fin-net">
+                                    <span style="font-size: 1.1rem; align-self: center; color: var(--dark);">Empresa de Transporte:</span>
+                                    <div style="text-align: right;">
+                                        <div style="line-height: 1;">$24.66</div>
+                                        <div style="font-size: 1.05rem; color: var(--gray); font-weight: 600; margin-top: 5px;">11.766,27 Bs</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fin-col">
+                                <h4>Valera / Barinas</h4>
+                                <div class="price-usd">$25</div>
+                                <div class="price-bs">11.928,72 Bs</div>
+                                <div class="fin-row">
+                                    <div class="fin-row-details">
+                                        <span class="fin-row-title">Terminal</span>
+                                        <span class="fin-row-sub">3% Listín + Tasa de Salida</span>
+                                    </div>
+                                    <div class="fin-row-amount">-$1.71</div>
+                                </div>
+                                <div class="fin-row">
+                                    <div class="fin-row-details">
+                                        <span class="fin-row-title">MiBoletoDirecto</span>
+                                        <span class="fin-row-sub">5.5% (Servicio)</span>
+                                    </div>
+                                    <div class="fin-row-amount">-$1.37</div>
+                                </div>
+                                <div class="fin-net">
+                                    <span style="font-size: 1.1rem; align-self: center; color: var(--dark);">Empresa de Transporte:</span>
+                                    <div style="text-align: right;">
+                                        <div style="line-height: 1;">$21.92</div>
+                                        <div style="font-size: 1.05rem; color: var(--gray); font-weight: 600; margin-top: 5px;">10.458,90 Bs</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="fin-col">
+                                <h4>Barquisimeto</h4>
+                                <div class="price-usd">$15</div>
+                                <div class="price-bs">7.157,23 Bs</div>
+                                <div class="fin-row">
+                                    <div class="fin-row-details">
+                                        <span class="fin-row-title">Terminal</span>
+                                        <span class="fin-row-sub">3% Listín + Tasa de Salida</span>
+                                    </div>
+                                    <div class="fin-row-amount">-$1.41</div>
+                                </div>
+                                <div class="fin-row">
+                                    <div class="fin-row-details">
+                                        <span class="fin-row-title">MiBoletoDirecto</span>
+                                        <span class="fin-row-sub">5.5% (Servicio)</span>
+                                    </div>
+                                    <div class="fin-row-amount">-$0.82</div>
+                                </div>
+                                <div class="fin-net">
+                                    <span style="font-size: 1.1rem; align-self: center; color: var(--dark);">Empresa de Transporte:</span>
+                                    <div style="text-align: right;">
+                                        <div style="line-height: 1;">$12.77</div>
+                                        <div style="font-size: 1.05rem; color: var(--gray); font-weight: 600; margin-top: 5px;">6.093,07 Bs</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="fin-grid">
-                    <div class="fin-col">
-                        <h4>S. Cristóbal / Mérida</h4>
-                        <div class="price-usd">$35</div>
-                        <div class="price-bs">16.700,20 Bs</div>
-                        <div class="fin-row">
-                            <div class="fin-row-details">
-                                <span class="fin-row-title">Terminal</span>
-                                <span class="fin-row-sub">3% Listín + Tasa de Salida</span>
-                            </div>
-                            <div class="fin-row-amount">-$2.01</div>
-                        </div>
-                        <div class="fin-row">
-                            <div class="fin-row-details">
-                                <span class="fin-row-title">MiBoletoDirecto</span>
-                                <span class="fin-row-sub">5.5% (Servicio)</span>
-                            </div>
-                            <div class="fin-row-amount">-$1.92</div>
-                        </div>
-                        <div class="fin-net">
-                            <span style="font-size: 1.1rem; align-self: center; color: var(--dark);">Empresa de Transporte:</span>
-                            <div style="text-align: right;">
-                                <div style="line-height: 1;">$31.07</div>
-                                <div style="font-size: 1.05rem; color: var(--gray); font-weight: 600; margin-top: 5px;">14.824,74 Bs</div>
+
+                <div id="tab-fin-escenario1" class="tab-content">
+                    <div class="grid-2" style="align-items: center; gap: 40px; margin-bottom: 20px;">
+                        <div class="card" style="padding: 30px 40px; border-left: 6px solid #F59E0B; height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                            <p class="text-body" style="margin: 0; font-size: 1.35rem; line-height: 1.6;">
+                                Así se verá la pantalla en la plataforma para el empresario transportista. Un <strong style="color: var(--dark);">dashboard operativo</strong> que demuestra cómo van sus ventas en tiempo real.<br><br>
+                                Específicamente, en el módulo de <strong style="color: var(--dark);">Relación de Venta</strong>, las empresas visualizan detalles vitales como el método de pago utilizado y los datos de sus pasajeros.
+                            </p>
+                            
+                            <div style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 25px;">
+                                <span style="color: var(--dark); font-size: 1.25rem; font-weight: 800; display: block; margin-bottom: 15px;"><i class="fad fa-analytics" style="color: var(--primary);"></i> Proyección de Ventas (Fase Inicial):</span>
+                                <div style="display: flex; gap: 20px;">
+                                    <div style="flex: 1; background: rgba(245, 158, 11, 0.1); border: 2px solid #F59E0B; padding: 15px; border-radius: 16px; text-align: center;">
+                                        <div style="color: #d97706; font-weight: 900; font-size: 1.8rem;">20%</div>
+                                        <div style="color: #d97706; font-weight: 600; font-size: 1.1rem;"><i class="fad fa-mobile-alt"></i> Vía App</div>
+                                    </div>
+                                    <div style="flex: 1; background: var(--primary-light); border: 2px solid var(--primary); padding: 15px; border-radius: 16px; text-align: center;">
+                                        <div style="color: var(--primary); font-weight: 900; font-size: 1.8rem;">80%</div>
+                                        <div style="color: var(--primary); font-weight: 600; font-size: 1.1rem;"><i class="fad fa-ticket-alt"></i> Taquilla</div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="fin-col">
-                        <h4>Maracaibo</h4>
-                        <div class="price-usd">$28</div>
-                        <div class="price-bs">13.360,17 Bs</div>
-                        <div class="fin-row">
-                            <div class="fin-row-details">
-                                <span class="fin-row-title">Terminal</span>
-                                <span class="fin-row-sub">3% Listín + Tasa de Salida</span>
-                            </div>
-                            <div class="fin-row-amount">-$1.80</div>
-                        </div>
-                        <div class="fin-row">
-                            <div class="fin-row-details">
-                                <span class="fin-row-title">MiBoletoDirecto</span>
-                                <span class="fin-row-sub">5.5% (Servicio)</span>
-                            </div>
-                            <div class="fin-row-amount">-$1.54</div>
-                        </div>
-                        <div class="fin-net">
-                            <span style="font-size: 1.1rem; align-self: center; color: var(--dark);">Empresa de Transporte:</span>
-                            <div style="text-align: right;">
-                                <div style="line-height: 1;">$24.66</div>
-                                <div style="font-size: 1.05rem; color: var(--gray); font-weight: 600; margin-top: 5px;">11.766,27 Bs</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fin-col">
-                        <h4>Valera / Barinas</h4>
-                        <div class="price-usd">$25</div>
-                        <div class="price-bs">11.928,72 Bs</div>
-                        <div class="fin-row">
-                            <div class="fin-row-details">
-                                <span class="fin-row-title">Terminal</span>
-                                <span class="fin-row-sub">3% Listín + Tasa de Salida</span>
-                            </div>
-                            <div class="fin-row-amount">-$1.71</div>
-                        </div>
-                        <div class="fin-row">
-                            <div class="fin-row-details">
-                                <span class="fin-row-title">MiBoletoDirecto</span>
-                                <span class="fin-row-sub">5.5% (Servicio)</span>
-                            </div>
-                            <div class="fin-row-amount">-$1.37</div>
-                        </div>
-                        <div class="fin-net">
-                            <span style="font-size: 1.1rem; align-self: center; color: var(--dark);">Empresa de Transporte:</span>
-                            <div style="text-align: right;">
-                                <div style="line-height: 1;">$21.92</div>
-                                <div style="font-size: 1.05rem; color: var(--gray); font-weight: 600; margin-top: 5px;">10.458,90 Bs</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="fin-col">
-                        <h4>Barquisimeto</h4>
-                        <div class="price-usd">$15</div>
-                        <div class="price-bs">7.157,23 Bs</div>
-                        <div class="fin-row">
-                            <div class="fin-row-details">
-                                <span class="fin-row-title">Terminal</span>
-                                <span class="fin-row-sub">3% Listín + Tasa de Salida</span>
-                            </div>
-                            <div class="fin-row-amount">-$1.41</div>
-                        </div>
-                        <div class="fin-row">
-                            <div class="fin-row-details">
-                                <span class="fin-row-title">MiBoletoDirecto</span>
-                                <span class="fin-row-sub">5.5% (Servicio)</span>
-                            </div>
-                            <div class="fin-row-amount">-$0.82</div>
-                        </div>
-                        <div class="fin-net">
-                            <span style="font-size: 1.1rem; align-self: center; color: var(--dark);">Empresa de Transporte:</span>
-                            <div style="text-align: right;">
-                                <div style="line-height: 1;">$12.77</div>
-                                <div style="font-size: 1.05rem; color: var(--gray); font-weight: 600; margin-top: 5px;">6.093,07 Bs</div>
-                            </div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 20px; height: 450px;">
+                            <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0014_knpjzy.jpg" style="width: 100%; height: 50%; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); object-fit: cover; border: 1px solid var(--border);" alt="Dashboard Transportista 1">
+                            <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0015_ldbiwq.jpg" style="width: 100%; height: 50%; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); object-fit: cover; border: 1px solid var(--border);" alt="Dashboard Transportista 2">
                         </div>
                     </div>
                 </div>
+
+                <div id="tab-fin-escenario2" class="tab-content">
+                    <div class="grid-2" style="align-items: center; gap: 40px; margin-bottom: 20px;">
+                        <div class="card" style="padding: 30px 40px; border-left: 6px solid var(--primary); height: 100%; display: flex; flex-direction: column; justify-content: center;">
+                            <p class="text-body" style="margin: 0; font-size: 1.35rem; line-height: 1.6;">
+                                Así se verá la pantalla en la plataforma para el empresario transportista. Un <strong style="color: var(--dark);">dashboard operativo</strong> que demuestra cómo van sus ventas en tiempo real.<br><br>
+                                Específicamente, en el módulo de <strong style="color: var(--dark);">Relación de Venta</strong>, las empresas visualizan detalles vitales como el método de pago utilizado y los datos de sus pasajeros.
+                            </p>
+                            
+                            <div style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 25px;">
+                                <span style="color: var(--dark); font-size: 1.25rem; font-weight: 800; display: block; margin-bottom: 15px;"><i class="fad fa-rocket-launch" style="color: var(--primary);"></i> Proyección de Ventas (Fase de Consolidación):</span>
+                                <div style="display: flex; gap: 20px;">
+                                    <div style="flex: 1; background: var(--primary-light); border: 2px solid var(--primary); padding: 15px; border-radius: 16px; text-align: center;">
+                                        <div style="color: var(--primary); font-weight: 900; font-size: 1.8rem;">80%</div>
+                                        <div style="color: var(--primary); font-weight: 600; font-size: 1.1rem;"><i class="fad fa-mobile-alt"></i> Vía App</div>
+                                    </div>
+                                    <div style="flex: 1; background: rgba(245, 158, 11, 0.1); border: 2px solid #F59E0B; padding: 15px; border-radius: 16px; text-align: center;">
+                                        <div style="color: #d97706; font-weight: 900; font-size: 1.8rem;">20%</div>
+                                        <div style="color: #d97706; font-weight: 600; font-size: 1.1rem;"><i class="fad fa-ticket-alt"></i> Taquilla</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; flex-direction: column; gap: 20px; height: 450px;">
+                            <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0016_jzhj01.jpg" style="width: 100%; height: 50%; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); object-fit: cover; border: 1px solid var(--border);" alt="Dashboard Transportista 1">
+                            <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0017_txmroi.jpg" style="width: 100%; height: 50%; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); object-fit: cover; border: 1px solid var(--border);" alt="Dashboard Transportista 2">
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
 
@@ -678,7 +733,7 @@
                     <div class="card">
                         <h3><i class="fad fa-database" style="color: var(--primary);"></i> Backups y Recuperación</h3>
                         <p class="text-body" style="margin-bottom: 10px;">La integridad de la información es innegociable. Realizamos <strong>respaldos diarios automatizados</strong> y georredundantes en tiempo real para asegurar rápida recuperación ante cualquier contingencia física.</p>
-                        <span style="font-size: 0.95rem; color: var(--gray); text-align: justify; display: block;">Infraestructura diseñada para continuidad de negocio.</span>
+                        <span style="font-size: 0.95rem; color: var(--gray); text-align: justify; display: block;">Infraestructura diseñada para continuity de negocio.</span>
                     </div>
                 </div>
                 <div>
@@ -862,17 +917,21 @@
 
         // --- 3. LÓGICA DE PESTAÑAS (TABS) DINÁMICAS ---
         function openTab(evt, tabId) {
-            evt.stopPropagation();
+            evt.stopPropagation(); 
             
-            let i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
+            // Limitamos la búsqueda al contenedor de pestañas donde se hizo click
+            const container = evt.currentTarget.closest('.tabs-container');
+            
+            let tabcontent = container.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].classList.remove("active");
             }
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
+            
+            let tablinks = container.getElementsByClassName("tab-btn");
+            for (let i = 0; i < tablinks.length; i++) {
                 tablinks[i].classList.remove("active");
             }
+            
             document.getElementById(tabId).classList.add("active");
             evt.currentTarget.classList.add("active");
         }
