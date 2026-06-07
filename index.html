@@ -213,8 +213,8 @@
         .tl-content p { font-size: 1.25rem; color: var(--gray-dark); line-height: 1.6; font-weight: 300; text-align: justify; }
 
         /* ======================================================== */
-      /* --- ESTILOS PARA LA LÁMINA LEGAL (MEDIA LUNA) --- */
-      /* ======================================================== */
+        /* --- ESTILOS PARA LA LÁMINA LEGAL (MEDIA LUNA) --- */
+        /* ======================================================== */
         .legal-wrapper {
             position: relative; width: 100%; height: calc(100% - 130px); margin-top: 10px;
         }
@@ -257,6 +257,95 @@
         
         .legal-node h4 { font-size: 1.4rem; color: var(--dark); margin-bottom: 12px; font-weight: 800;}
         .legal-node p { font-size: 1.05rem; color: var(--gray-dark); line-height: 1.6; font-weight: 400; text-align: justify;}
+
+        /* ======================================================== */
+        /* --- CARRUSEL ESTILO INSTAGRAM (ESCENARIOS) --- */
+        /* ======================================================== */
+        .carousel-wrapper {
+            position: relative;
+            width: 100%;
+            height: 550px; 
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border: 1px solid var(--border);
+            background: var(--white); 
+        }
+        .carousel-track {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none; 
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+        }
+        .carousel-track::-webkit-scrollbar {
+            display: none; 
+        }
+        .carousel-slide {
+            flex: 0 0 100%; 
+            width: 100%;
+            height: 100%;
+            object-fit: contain; 
+            object-position: center; 
+            scroll-snap-align: center; 
+            padding: 15px; 
+        }
+
+        /* --- BOTONES DEL CARRUSEL (Más transparentes y sutiles) --- */
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.3); /* Transparente y sutil */
+            backdrop-filter: blur(2px);
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            color: rgba(36, 130, 124, 0.6); /* Color del icono más suave */
+            font-size: 1.3rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .carousel-btn:hover { 
+            background: rgba(255, 255, 255, 0.9); /* Se aclara al interactuar */
+            color: var(--primary); /* Retoma el color corporativo */
+            transform: translateY(-50%) scale(1.05); 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .carousel-btn.prev { left: 15px; }
+        .carousel-btn.next { right: 15px; }
+        
+        /* Puntitos indicadores (Dots) */
+        .carousel-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+            background: rgba(0,0,0,0.4);
+            padding: 8px 12px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+        }
+        .carousel-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .carousel-dot.active { background: var(--white); transform: scale(1.4); }
 
     </style>
 </head>
@@ -323,7 +412,7 @@
                             <div style="background: var(--gray-light); padding: 20px; border-radius: 16px; flex: 1; border: 1px solid var(--border);">
                                 <strong style="color: var(--dark); display: block; margin-bottom: 8px; font-size: 1.1rem;"><i class="fad fa-leaf" style="color: var(--primary);"></i> Ganancia Implícita</strong>
                                 <span style="font-size: 1rem; color: var(--gray); line-height: 1.4; display: block; text-align: justify;">Andenes organizados, respeto al tiempo del ciudadano e información online que orienta al pasajero sobre su vinculación en las instalaciones del Terminal.</span>
-    </div>
+                            </div>
                       </div>
                   </div>
               </div>
@@ -334,25 +423,55 @@
         </div>
 
         <div class="slide">
-            <h2 class="slide-title"><i class="fad fa-institution"></i> Efecto Estado: Gobernabilidad y Soberanía</h2>
-          <p class="slide-subtitle">Una herramienta tecnológica para auditar, administrar y potenciar la gestión pública municipal en materia de Terminales.</p>
-          <div class="grid-2" style="height: calc(100% - 150px); align-items: center;">
-                <div style="display: flex; flex-direction: column; gap: 25px; height: 100%; justify-content: center;">
-                    <div class="card" style="padding: 30px;">
-                        <h3 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 10px;"><i class="fad fa-server"></i> Soberanía de Datos</h3>
-                        <p class="text-body" style="font-size: 1.15rem; margin: 0;">La Alcaldía a través de INTRAVIALCA mantiene la propiedad de la información para planificar políticas de movilidad basadas en flujos reales, logrando total independencia tecnológica.</p>
+            <h2 class="slide-title"><i class="fad fa-institution"></i> Gobernabilidad y Soberanía</h2>
+            <p class="slide-subtitle">Una herramienta tecnológica para auditar, administrar y potenciar la gestión pública municipal en materia de Terminales.</p>
+            <div class="grid-2" style="height: calc(100% - 140px); align-items: center;">
+                
+                <div style="display: flex; flex-direction: column; gap: 15px; height: 100%; justify-content: center;">
+                    
+                    <div class="card" style="padding: 18px 25px; display: flex; gap: 18px; align-items: flex-start; border-left: 5px solid var(--primary);">
+                        <div style="background: var(--primary-light); color: var(--primary); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="fad fa-server"></i>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--dark); font-size: 1.25rem; margin-bottom: 6px;">Soberanía de Datos</h3>
+                            <p class="text-body" style="font-size: 0.95rem; margin: 0; text-align: justify; line-height: 1.5;">La Alcaldía, a través de INTRAVIALCA, mantiene la propiedad absoluta de la información generada. Esto permite diseñar políticas de movilidad precisas basadas en flujos reales de pasajeros, garantizando total independencia tecnológica.</p>
+                        </div>
                     </div>
-                    <div class="card" style="padding: 30px;">
-                        <h3 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 10px;"><i class="fad fa-eye"></i> Transparencia</h3>
-                        <p class="text-body" style="font-size: 1.15rem; margin: 0;">Cada boleto emitido alimenta una base de datos auditable en tiempo real. El dinero correspondiente a INTRAVIALCA es asegurado de manera inmediata sin intermediarios.</p>
+
+                    <div class="card" style="padding: 18px 25px; display: flex; gap: 18px; align-items: flex-start; border-left: 5px solid #F59E0B;">
+                        <div style="background: rgba(245, 158, 11, 0.1); color: #F59E0B; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="fad fa-bolt"></i>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--dark); font-size: 1.25rem; margin-bottom: 6px;">Celeridad</h3>
+                            <p class="text-body" style="font-size: 0.95rem; margin: 0; text-align: justify; line-height: 1.5;">El sistema responde ágilmente a la Ley Orgánica para la Celeridad de Trámites. Automatiza el abordaje, facilita la interoperabilidad institucional y elimina cuellos de botella operativos, complementándose con canales de atención personalizada.</p>
+                        </div>
                     </div>
-                    <div class="card" style="padding: 30px;">
-                        <h3 style="color: var(--primary); font-size: 1.6rem; margin-bottom: 10px;"><i class="fad fa-thumbs-up"></i> Éxito de Gestión</h3>
-                        <p class="text-body" style="font-size: 1.15rem; margin: 0;">Un Terminal moderno dignifica al ciudadano. Esta digitalización es un hito de gobierno visible y la optimización de los espacios es una victoria palpable ante la opinión pública.</p>
+
+                    <div class="card" style="padding: 18px 25px; display: flex; gap: 18px; align-items: flex-start; border-left: 5px solid #EF4444;">
+                        <div style="background: rgba(239, 68, 68, 0.1); color: #EF4444; width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="fad fa-eye"></i>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--dark); font-size: 1.25rem; margin-bottom: 6px;">Transparencia</h3>
+                            <p class="text-body" style="font-size: 0.95rem; margin: 0; text-align: justify; line-height: 1.5;">Garantizamos un ecosistema donde cada boleto emitido alimenta un libro mayor digital auditable. La recaudación de INTRAVIALCA se liquida de forma automatizada e inmediata, erradicando por completo la opacidad financiera.</p>
+                        </div>
                     </div>
+
+                    <div class="card" style="padding: 18px 25px; display: flex; gap: 18px; align-items: flex-start; border-left: 5px solid var(--primary);">
+                        <div style="background: var(--primary-light); color: var(--primary); width: 48px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0;">
+                            <i class="fad fa-thumbs-up"></i>
+                        </div>
+                        <div>
+                            <h3 style="color: var(--dark); font-size: 1.25rem; margin-bottom: 6px;">Éxito de Gestión</h3>
+                            <p class="text-body" style="font-size: 0.95rem; margin: 0; text-align: justify; line-height: 1.5;">Un Terminal moderno y eficiente dignifica al ciudadano. La ejecución de esta modernización tecnológica se traduce en un hito de gobierno visible, convirtiendo la optimización de los espacios en una victoria palpable ante la opinión pública.</p>
+                        </div>
+                    </div>
+
                 </div>
                 <div style="height: 100%; display: flex; align-items: center; justify-content: center;">
-                    <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1775852406/Screenshot_20260410_154329_Chrome_mewdkv.png" class="mockup" style="height: 620px; width: auto; object-fit: contain; border-radius: 25px;" alt="Dashboard de Control y Gestión">
+                    <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1775852406/Screenshot_20260410_154329_Chrome_mewdkv.png" class="mockup" style="height: 580px; width: auto; object-fit: contain; border-radius: 25px;" alt="Dashboard de Control y Gestión">
                 </div>
             </div>
         </div>
@@ -403,8 +522,8 @@
                                     <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1775915315/qr-code_94_vgk1ms.png" class="qr-dynamic" alt="QR Terminal">
                                     <div class="qr-label"><i class="fad fa-external-link-alt" style="color: var(--primary);"></i> Ver Terminal en Vivo</div>
                                 </a>
-                                <a href="https://drive.google.com/file/d/1oXsLlce1-rDCsUtfLHjI5lozeAVyKn1T/view?usp=sharing" target="_blank" class="qr-wrapper" title="Abrir Listín Electrónico">
-                                    <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1775915314/qr-code_95_h1qpqq.png" class="qr-dynamic" alt="QR Listín">
+                                <a href="https://res.cloudinary.com/dqt0d66h7/raw/upload/v1780785396/TERMINALES/TLB/LISTINES_RL/listin_TLB-RL-2026-10726_6359b7ad-f91e-47f4-a41f-56828d5f0679.pdf" target="_blank" class="qr-wrapper" title="Abrir Listín Electrónico">
+                                    <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780835908/IMG-20260607-WA0087_tftwis.jpg" class="qr-dynamic" alt="QR Listín">
                                     <div class="qr-label" style="white-space: normal; text-align: center; max-width: 200px; line-height: 1.3;"><i class="fad fa-external-link-alt" style="color: var(--primary);"></i> Ver ejemplo del Listín</div>
                                 </a>
                             </div>
@@ -493,8 +612,8 @@
                         </div>
                         <div style="display: flex; flex-direction: row; align-items: center; justify-content: center; height: 100%; gap: 30px;">
                             <div style="display: flex; flex-direction: column; gap: 30px;">
-                                <a href="https://drive.google.com/file/d/1-qKkOuOuxKdh28lDxUy29_-z5Y66WbXW/view?usp=drive_link" target="_blank" class="qr-wrapper" title="Abrir Pase de Abordaje">
-                                    <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1775934666/qr-code_96_idunfj.png" class="qr-dynamic" alt="QR Pase">
+                                <a href="https://drive.google.com/file/d/13280LwVoqToGdZrxqpnGpwekqMYsnFpl/view?usp=sharing" target="_blank" class="qr-wrapper" title="Abrir Pase de Abordaje">
+                                    <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780835908/IMG-20260607-WA0086_e2doly.jpg" class="qr-dynamic" alt="QR Pase">
                                     <div class="qr-label" style="white-space: normal; text-align: center; max-width: 180px; line-height: 1.3;"><i class="fad fa-external-link-alt" style="color: var(--primary);"></i> Ver Pase de Abordaje</div>
                                 </a>
                             </div>
@@ -652,9 +771,8 @@
                     <div class="grid-2" style="align-items: center; gap: 40px; margin-bottom: 20px;">
                         <div class="card" style="padding: 30px 40px; border-left: 6px solid #F59E0B; height: 100%; display: flex; flex-direction: column; justify-content: center;">
                             <p class="text-body" style="margin: 0; font-size: 1.35rem; line-height: 1.6;">
-                                Un <strong style="color: var(--dark);">dashboard operativo</strong> que demuestra las ventas en tiempo real, por unidad.<br><br>
-                                En <strong style="color: var(--dark);">Relación de Venta</strong>, las empresas visualizarán detalles como el método de pago utilizado y los datos de sus pasajeros.<br><br>
-                                En este primer escenario, la taquilla domina los registros. No garantiza que la empresa de transporte reciba el total de los ingresos de la venta, dado que no controla la recaudación.
+                                Así se verá la pantalla en la plataforma para el empresario transportista. Un <strong style="color: var(--dark);">dashboard operativo</strong> que demuestra cómo van sus ventas en tiempo real.<br><br>
+                                Específicamente, en el módulo de <strong style="color: var(--dark);">Relación de Venta</strong>, las empresas visualizan detalles vitales como el método de pago utilizado y los datos de sus pasajeros.
                             </p>
                             
                             <div style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 25px;">
@@ -672,9 +790,17 @@
                             </div>
                         </div>
                         
-                        <div style="display: flex; flex-direction: column; gap: 20px; height: 450px;">
-                            <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0014_knpjzy.jpg" style="width: 100%; height: 50%; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); object-fit: cover; border: 1px solid var(--border);" alt="Dashboard Transportista 1">
-                            <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0015_ldbiwq.jpg" style="width: 100%; height: 50%; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); object-fit: cover; border: 1px solid var(--border);" alt="Dashboard Transportista 2">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track">
+                                <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0014_knpjzy.jpg" class="carousel-slide" alt="Dashboard Transportista 1">
+                                <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0015_ldbiwq.jpg" class="carousel-slide" alt="Dashboard Transportista 2">
+                            </div>
+                            <button class="carousel-btn prev" onclick="moveCarousel(this, -1)"><i class="fad fa-chevron-left"></i></button>
+                            <button class="carousel-btn next" onclick="moveCarousel(this, 1)"><i class="fad fa-chevron-right"></i></button>
+                            <div class="carousel-dots">
+                                <div class="carousel-dot active"></div>
+                                <div class="carousel-dot"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -683,9 +809,8 @@
                     <div class="grid-2" style="align-items: center; gap: 40px; margin-bottom: 20px;">
                         <div class="card" style="padding: 30px 40px; border-left: 6px solid var(--primary); height: 100%; display: flex; flex-direction: column; justify-content: center;">
                             <p class="text-body" style="margin: 0; font-size: 1.35rem; line-height: 1.6;">
-                                Un <strong style="color: var(--dark);">dashboard operativo</strong> que demuestra las ventas en tiempo real, por unidad.<br><br>
-                                En <strong style="color: var(--dark);">Relación de Venta</strong>, las empresas visualizarán detalles como el método de pago utilizado y los datos de sus pasajeros.<br><br>
-                                En este segundo escenario, la empresa de transporte domina los ingresos de sus ventas y decide su administración. Aquí la mayoría de los usuarios llegan al Terminal con su boleto.
+                                Así se verá la pantalla en la plataforma para el empresario transportista. Un <strong style="color: var(--dark);">dashboard operativo</strong> que demuestra cómo van sus ventas en tiempo real.<br><br>
+                                Específicamente, en el módulo de <strong style="color: var(--dark);">Relación de Venta</strong>, las empresas visualizan detalles vitales como el método de pago utilizado y los datos de sus pasajeros.
                             </p>
                             
                             <div style="margin-top: 30px; border-top: 1px solid var(--border); padding-top: 25px;">
@@ -703,9 +828,17 @@
                             </div>
                         </div>
                         
-                        <div style="display: flex; flex-direction: column; gap: 20px; height: 450px;">
-                            <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0016_jzhj01.jpg" style="width: 100%; height: 50%; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); object-fit: cover; border: 1px solid var(--border);" alt="Dashboard Transportista 1">
-                            <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0017_txmroi.jpg" style="width: 100%; height: 50%; border-radius: 16px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); object-fit: cover; border: 1px solid var(--border);" alt="Dashboard Transportista 2">
+                        <div class="carousel-wrapper">
+                            <div class="carousel-track">
+                                <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0016_jzhj01.jpg" class="carousel-slide" alt="Dashboard Transportista 1">
+                                <img src="https://res.cloudinary.com/dqt0d66h7/image/upload/v1780791528/IMG-20260607-WA0017_txmroi.jpg" class="carousel-slide" alt="Dashboard Transportista 2">
+                            </div>
+                            <button class="carousel-btn prev" onclick="moveCarousel(this, -1)"><i class="fad fa-chevron-left"></i></button>
+                            <button class="carousel-btn next" onclick="moveCarousel(this, 1)"><i class="fad fa-chevron-right"></i></button>
+                            <div class="carousel-dots">
+                                <div class="carousel-dot active"></div>
+                                <div class="carousel-dot"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -972,6 +1105,30 @@
             } else {
                 btn.classList.remove('attention');
             }
+        });
+
+        // --- 5. LÓGICA DE LOS CARRUSELES ESTILO INSTAGRAM ---
+        function moveCarousel(btn, direction) {
+            const wrapper = btn.closest('.carousel-wrapper');
+            const track = wrapper.querySelector('.carousel-track');
+            const slideWidth = wrapper.offsetWidth;
+            track.scrollBy({ left: direction * slideWidth, behavior: 'smooth' });
+        }
+
+        // Sincronizar los "dots" cuando el usuario hace scroll/swipe manual
+        document.querySelectorAll('.carousel-track').forEach(track => {
+            track.addEventListener('scroll', () => {
+                const wrapper = track.closest('.carousel-wrapper');
+                const dots = wrapper.querySelectorAll('.carousel-dot');
+                
+                // Calcula en qué imagen estamos basados en el scroll actual
+                const index = Math.round(track.scrollLeft / wrapper.offsetWidth);
+                
+                // Actualiza la clase activa en el dot correspondiente
+                dots.forEach((dot, i) => {
+                    dot.classList.toggle('active', i === index);
+                });
+            });
         });
 
         // Init
